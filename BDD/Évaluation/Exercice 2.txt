@@ -1,0 +1,12 @@
+Étant donné que 'employees' et 'posts' sont séparés du reste de la table, il est possible de commencer par elles.
+Il faut donc commencer par 'posts' car 'employees' a besoin de la clé primaire de 'posts' pour fonctionner.
+
+On peut donc ensuite s'attaquer au reste de la table.
+Il serait juste de commencer par la table 'countries' étant donné qu'elle n'a besoin d'aucune clé étrangère pour fonctionner.
+On peut ensuite faire 'customers' et 'suppliers' qui ont toutes deux besoin de 'countries'.
+Ensuite, il est possible de faire 'orders' qui avait besoin de 'customers'.
+Nous pouvons désormais faire la table 'categories' (qui aurait pu être faite avant) pour pouvoir faire la table 'products' et terminer par 'orders_details' qui 
+avait besoin de 'products' et 'orders' pour fonctionner.
+
+Pour résumer :
+'posts' -> 'employees' -> 'countries' -> 'customers' -> 'suppliers' -> 'orders' -> 'categories' -> 'products' -> 'orders_details'.
