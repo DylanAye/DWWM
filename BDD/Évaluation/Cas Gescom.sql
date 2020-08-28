@@ -1,3 +1,5 @@
+-------------------- 1 --------------------
+
 SELECT CONCAT(emp_lastname,' ',emp_firstname), emp_children
 FROM employees
 WHERE emp_children >0
@@ -39,7 +41,7 @@ LIMIT 1
 SELECT pro_id, pro_ref, pro_name
 FROM products
 JOIN orders_details ON products.pro_id = orders_details.ode_id
-WHERE ode_quantity != pro_stock
+WHERE ode_quantity = pro_stock
 
 -------------------- 8 --------------------
 
@@ -91,12 +93,47 @@ FROM orders
 JOIN orders_details ON orders.ord_id = orders_details.ode_ord_id
 WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
 
--------------------- 17 --------------------
+-------------------- 17 -------------------- ++TODO++
 
 SELECT *
 FROM suppliers
 
 -------------------- 18 --------------------
 
-SELECT SUM(ode_unit_price * ode_quantity) - ode_discount AS CA
+SELECT TRUNCATE (SUM((ode_unit_price * ode_quantity)*((100 - ode_discount)/ 100)),2) AS CA
 FROM orders_details
+JOIN orders ON orders_details.ode_ord_id = orders.ord_id
+WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
+
+-------------------- 19 -------------------- ++TODO++
+
+SELECT TRUNCATE (SUM((ode_unit_price * ode_quantity)*((100 - ode_discount)/ 100))/COUNT(*),2) AS Panier
+FROM orders_details
+JOIN orders ON orders_details.ode_ord_id = orders.ord_id
+JOIN customers ON orders.ord_cus_id = customers.cus_id
+WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
+
+-------------------- 20 --------------------
+
+SELECT ord_id, ord_order_date, CONCAT(cus_lastname, ' ', cus_firstname) AS `Name`, TRUNCATE(((ode_unit_price * ode_quantity) * ((100 - ode_discount)/100)),2) AS `Order amount`
+FROM orders_details
+JOIN orders ON orders_details.ode_ord_id = orders.ord_id
+JOIN customers ON orders.ord_cus_id = customers.cus_id
+ORDER BY `Order amount` DESC
+
+-------------------- 22 --------------------
+
+UPDATE products
+SET pro_name = 'Camper', pro_price = pro_price*0.90
+WHERE pro_ref = 'barb004'
+
+-------------------- 23 -------------------- ++TODO++
+
+UPDATE products
+SET pro_price = pro_price * 1.1
+FROM products
+JOIN categories ON products.pro_cat_id = categories.cat_parent_id
+WHERE cat_name = 'Parasols'
+
+-------------------- 24 --------------------
+
