@@ -27,9 +27,6 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `categories`
 --
-DROP DATABASE IF EXISTS gescom;
-CREATE DATABASE gescom;
-USE gescom;
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (

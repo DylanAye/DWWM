@@ -36,12 +36,13 @@ FROM products
 ORDER BY pro_price
 LIMIT 1
 
--------------------- 7 -------------------- ++TODO++
+-------------------- 7 --------------------
 
 SELECT pro_id, pro_ref, pro_name
 FROM products
 JOIN orders_details ON products.pro_id = orders_details.ode_id
-WHERE ode_quantity = pro_stock
+WHERE pro_id NOT IN 
+    (SELECT ode_pro_id FROM orders_details)
 
 -------------------- 8 --------------------
 
@@ -93,10 +94,13 @@ FROM orders
 JOIN orders_details ON orders.ord_id = orders_details.ode_ord_id
 WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
 
--------------------- 17 -------------------- ++TODO++
+-------------------- 17 --------------------
 
-SELECT *
+SELECT DISTINCT sup_id, sup_name, sup_city, sup_address, sup_zipcode, sup_phone, sup_mail
 FROM suppliers
+JOIN products ON suppliers.sup_id = products.pro_sup_id
+WHERE pro_id IN 
+    (SELECT ode_pro_id FROM orders_details)
 
 -------------------- 18 --------------------
 
@@ -105,13 +109,10 @@ FROM orders_details
 JOIN orders ON orders_details.ode_ord_id = orders.ord_id
 WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
 
--------------------- 19 -------------------- ++TODO++
+-------------------- 19 --------------------
 
-SELECT TRUNCATE (SUM((ode_unit_price * ode_quantity)*((100 - ode_discount)/ 100))/COUNT(*),2) AS Panier
+SELECT TRUNCATE (SUM((ode_unit_price * ode_quantity)*((100 - ode_discount)/ 100))/COUNT(DISTINCT ode_ord_id),2) AS Panier
 FROM orders_details
-JOIN orders ON orders_details.ode_ord_id = orders.ord_id
-JOIN customers ON orders.ord_cus_id = customers.cus_id
-WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
 
 -------------------- 20 --------------------
 
@@ -127,13 +128,17 @@ UPDATE products
 SET pro_name = 'Camper', pro_price = pro_price*0.90
 WHERE pro_ref = 'barb004'
 
--------------------- 23 -------------------- ++TODO++
+-------------------- 23 --------------------
 
 UPDATE products
-SET pro_price = pro_price * 1.1
-FROM products
-JOIN categories ON products.pro_cat_id = categories.cat_parent_id
-WHERE cat_name = 'Parasols'
+SET pro_price = pro_price * 1.011
+WHERE pro_cat_id IN
+    (SELECT cat_id FROM categories WHERE cat_name = 'Parasols')
 
 -------------------- 24 --------------------
 
+DELETE FROM products
+WHERE pro_cat_id IN
+    (SELECT cat_id FROM categories WHERE cat_name = 'Tondeuses électriques')
+AND pro_id NOT IN 
+    (SELECT ode_pro_id FROM orders_details)
