@@ -89,10 +89,11 @@ WHERE cou_name = 'Canada'
 
 -------------------- 16 --------------------
 
-SELECT DISTINCT ode_id, ode_unit_price, ode_discount, ode_quantity, ode_ord_id, ode_pro_id, ord_order_date
+SELECT DISTINCT ode_id, ode_unit_price, ode_discount, ode_quantity, ode_ord_id, ode_pro_id, ord_order_date 
 FROM orders
 JOIN orders_details ON orders.ord_id = orders_details.ode_ord_id
-WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
+-- WHERE YEAR(ord_order_date) = 2020
+WHERE ord_order_date LIKE '%2020%'
 
 -------------------- 17 --------------------
 

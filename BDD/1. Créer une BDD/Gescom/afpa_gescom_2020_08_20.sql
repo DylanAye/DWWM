@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `categories`
 --
+DROP DATABASE IF EXISTS afpa_gescom;
+CREATE DATABASE afpa_gescom;
+USE afpa_gescom;
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (

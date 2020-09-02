@@ -8,10 +8,10 @@ INSERT INTO `posts` (`pos_id`,`pos_libelle`) VALUES
 
 
 INSERT INTO `employees` (`emp_id`,`emp_superior_id`,`emp_pos_id`,`emp_firstname`,`emp_lastname`,`emp_address`,`emp_zipcode`,`emp_city`,`emp_mail`,`emp_phone`,`emp_salary`,`emp_enter_date`,`emp_gender`,`emp_children`) VALUES
-(100, 1, 2, 'Marcoux', 'Stéphane', '54 rue Roussy', '84100', 'Orange','spephanemarcoux@gmail.com', '0424256987', '2200.00','2010-02-01','M',2),
-(101, 4, 5, 'Courtemanche', 'Nicolas', '59 rue Sébastopol', '42000', 'Saint-Etienne', 'nicolas.courtemanche@gmail.com', '0645985525', '1300.00', '2018-05-12', 'M',0),
-(102, NULL, 1, 'Perillard', 'Verney', '8 boulevard de Prague', '30900', 'Nîmes','perillard.verney@gmail.com', '0264854478','4500.00','2002-01-01', 'F', 12),
-(103, 3, 4, 'Berthelette', 'Anaïs', '66 rue Gontier-Patin', '34300', 'Agde', 'AnaisBerthelette@jourrapide.com','2469782364','2000.00', '2014-02-12','F', 1);
+(100, NULL, 1, 'Perillard', 'Verney', '8 boulevard de Prague', '30900', 'Nîmes','perillard.verney@gmail.com', '0264854478','4500.00','2002-01-01', 'F', 12),
+(101, 100, 2, 'Marcoux', 'Stéphane', '54 rue Roussy', '84100', 'Orange','spephanemarcoux@gmail.com', '0424256987', '2200.00','2010-02-01','M',2),
+(102, 101, 4, 'Berthelette', 'Anaïs', '66 rue Gontier-Patin', '34300', 'Agde', 'AnaisBerthelette@jourrapide.com','2469782364','2000.00', '2014-02-12','F', 1);
+(103, 102, 5, 'Courtemanche', 'Nicolas', '59 rue Sébastopol', '42000', 'Saint-Etienne', 'nicolas.courtemanche@gmail.com', '0645985525', '1300.00', '2018-05-12', 'M',0),
 
 
 
