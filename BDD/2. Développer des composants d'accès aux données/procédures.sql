@@ -21,3 +21,7 @@ BEGIN
 INSERT INTO suppliers(sup_name, sup_city, sup_countries_id, sup_address, sup_zipcode, sup_contact, sup_phone, sup_mail) VALUES 
 (p_nom, v_ville, p_countries_id, v_country, p_address, p_zipcode, p_contact, p_phone, p_mail);
 END $$
+
+DELIMITER ;
+
+CALL ajoutFournisseur
