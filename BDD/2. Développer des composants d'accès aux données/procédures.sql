@@ -1,4 +1,4 @@
-DELIMITER $$
+DELIMITER |
 
 CREATE PROCEDURE ajoutFournisseur(
     IN p_nom VARCHAR(50), 
@@ -12,16 +12,33 @@ CREATE PROCEDURE ajoutFournisseur(
 
 BEGIN
    DECLARE v_ville VARCHAR (50);
-   SET v_ville = 'Amiens';  
+   SET v_ville = 'Amiens';   
 
-BEGIN
-    DECLARE v_country varchar(50);
-    SET v_country = 'France';
-
-INSERT INTO suppliers(sup_name, sup_city, sup_countries_id, sup_address, sup_zipcode, sup_contact, sup_phone, sup_mail) VALUES 
-(p_nom, v_ville, p_countries_id, v_country, p_address, p_zipcode, p_contact, p_phone, p_mail);
-END $$
+   INSERT INTO suppliers(sup_name, sup_city, sup_countries_id, sup_address, sup_zipcode, sup_contact, sup_phone, sup_mail) VALUES (p_nom, v_ville, p_countries_id, p_address, p_zipcode, p_contact, p_phone, p_mail);
+END |
 
 DELIMITER ;
 
-CALL ajoutFournisseur
+CALL ajoutFournisseur("Bleu","FR","Avenue du lys","75000","JP","0699009900","bleu@abc.def");
+
+------------------------------------------------------
+
+DELIMITER |
+
+CREATE PROCEDURE Lst_Suppliers()
+
+BEGIN
+    SELECT DISTINCT sup_name
+    FROM suppliers
+    JOIN products ON suppliers.sup_id = products.pro_sup_id
+    JOIN orders_details ON products.pro_id = orders_details.ode_pro_id;
+
+END |
+
+DELIMITER ;
+
+------------------------------------------------------
+
+DELMITER $$
+
+CREATE PROCEDURE Lst_Rush_Orders()
