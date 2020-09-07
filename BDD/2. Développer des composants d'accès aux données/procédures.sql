@@ -39,6 +39,37 @@ DELIMITER ;
 
 ------------------------------------------------------
 
-DELMITER $$
+DELIMITER $$
 
 CREATE PROCEDURE Lst_Rush_Orders()
+
+BEGIN
+    SELECT *
+    FROM orders
+    WHERE ord_status = "Commande urgente";
+
+END $$
+
+DELIMITER ;
+
+------------------------------------------------------
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS CA_Supplier$$
+CREATE PROCEDURE CA_Supplier(
+    p_sup_id INT(10), 
+    p_order_date YEAR)
+
+BEGIN
+    SELECT TRUNCATE (SUM((ode_unit_price * ode_quantity)*((100 - ode_discount)/ 100)),2) AS CA
+    FROM orders_details
+    JOIN products ON orders_details.ode_pro_id = products.pro_id
+    JOIN suppliers ON products.pro_sup_id = suppliers.sup_id
+    JOIN orders ON orders_details.ode_ord_id = orders.ord_id
+    WHERE p_sup_id = sup_id
+    AND p_order_date = YEAR(ord_order_date);
+
+END $$
+
+DELIMITER ;
