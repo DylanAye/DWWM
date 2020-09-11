@@ -17,10 +17,24 @@ AFTER UPDATE ON products
 FOR EACH ROW
 
 BEGIN
-    IF(pro_stock<pro_stock_alert)
+    DECLARE stockage  VARCHAR(50); -- Qui va servir à stocker le SELECT pour la vérification
+    DECLARE nouveau_stock  int(10); -- Qui va servir à stocker la différence entre le stock et le stock_alert
+    SET nouveau_stock = NEW.pro_stock_alert - NEW.pro_stock;
+    IF(NEW.pro_stock<NEW.pro_stock_alert)
     THEN
-    INSERT INTO commander_articles VALUES (8, pro_stock_alert-pro_stock, NULL);
+        SET stockage = (SELECT codart FROM commander_articles WHERE codart = NEW.pro_id);
+        IF ISNULL (stockage) -- Sert à vérifier si l'id de ce produit existe ou pas dans la table commander_articles
+        THEN
+            INSERT INTO commander_articles VALUES (NEW.pro_id, nouveau_stock, CURRENT_TIMESTAMP());
+            ELSE
+            UPDATE commander_articles SET qte = nouveau_stock WHERE codart = NEW.pro_id;
+        END IF;
     END IF;
 END$$
 
 DELIMITER ;
+
+
+UPDATE `products` 
+SET `pro_stock` = '4' 
+WHERE `products`.`pro_id` = 8
