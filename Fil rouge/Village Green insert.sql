@@ -87,7 +87,7 @@ INSERT INTO `suppliers` (`sup_id`,`sup_name`,`sup_address`,`sup_zipcode`,`sup_ci
 (10,"Arcu Iaculis Enim Corp.","858-1453 Cum Ave","1283","Buggenhout","0624070976","Aliquam.erat.volutpat@eunulla.ca","CA");
 
 INSERT INTO `products` (`pro_id`,`pro_name`,`pro_desc`,`pro_price`,`pro_ref`,`pro_stock`,`pro_stock_alert`,`pro_color`,`pro_picture`,`pro_add_date`,`pro_update_date`,`pro_blocked`,`pro_sup_id`,`pro_cat_id`) VALUES 
-(1,"Quisque","aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non",909,"TRH45TOZ9HF",3,8,"orange","vitae","2021-01-10","2021-01-07",2,6),
+(1,"Guitare Électrique LA, Red + Pack Ampli","aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non",909,"TRH45TOZ9HF",3,8,"orange","vitae","2021-01-10","2021-01-07",2,6),
 (2,"Nulla","tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam",919,"SZT98BVB4TL",10,2,"red","vitae","2019-12-05","2021-02-13",1,10),
 (3,"Sed","Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus.",230,"FIT04OWL9SR",1,5,"green","elit,","2019-12-29","2020-10-07",2,2),
 (4,"ligula.","nisi. Cum sociis natoque penatibus et magnis dis parturient montes,",743,"EJJ89BUI1EN",4,5,"violet","dapibus","2021-02-20","2020-06-04",1,9),
