@@ -114,7 +114,7 @@ CREATE TABLE suppliers(
 CREATE TABLE products(
     pro_id                          int AUTO_INCREMENT NOT NULL,
     pro_name                        varchar(50) NOT NULL,
-    pro_desc                        varchar(255) NOT NULL,
+    pro_desc                        text NOT NULL,
     pro_price                       decimal(7,2) NOT NULL,
     pro_ref                         varchar(50) NOT NULL,
     pro_stock                       int(10) NOT NULL,

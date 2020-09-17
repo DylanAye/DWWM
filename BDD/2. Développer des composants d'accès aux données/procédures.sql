@@ -23,8 +23,9 @@ CALL ajoutFournisseur("Bleu","FR","Avenue du lys","75000","JP","0699009900","ble
 
 ------------------------------------------------------
 
-DELIMITER |
+DELIMITER $$
 
+DROP PROCEDURE IF EXISTS Lst_Suppliers$$
 CREATE PROCEDURE Lst_Suppliers()
 
 BEGIN
@@ -33,14 +34,19 @@ BEGIN
     JOIN products ON suppliers.sup_id = products.pro_sup_id
     JOIN orders_details ON products.pro_id = orders_details.ode_pro_id;
 
-END |
+END $$
 
 DELIMITER ;
+
+SHOW CREATE PROCEDURE Lst_Suppliers;
+
+CALL Lst_Suppliers();
 
 ------------------------------------------------------
 
 DELIMITER $$
 
+DROP PROCEDURE IF EXISTS Lst_Rush_Orders$$
 CREATE PROCEDURE Lst_Rush_Orders()
 
 BEGIN
@@ -51,6 +57,8 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+CALL Lst_Rush_Orders();
 
 ------------------------------------------------------
 
@@ -73,3 +81,5 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+CALL CA_Supplier(1,2020);

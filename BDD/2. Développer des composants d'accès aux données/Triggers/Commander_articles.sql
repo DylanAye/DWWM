@@ -19,7 +19,11 @@ FOR EACH ROW
 BEGIN
     DECLARE stockage  VARCHAR(50); -- Qui va servir à stocker le SELECT pour la vérification
     DECLARE nouveau_stock  int(10); -- Qui va servir à stocker la différence entre le stock et le stock_alert
-    SET nouveau_stock = NEW.pro_stock_alert - NEW.pro_stock;
+    DECLARE stock       int(10);
+    DECLARE stock_alert int(10);
+    SET stock = NEW.pro_stock;
+    SET stock_alert = NEW.pro_stock_alert;
+    SET nouveau_stock = (stock_alert - stock);
     IF(NEW.pro_stock<NEW.pro_stock_alert)
     THEN
         SET stockage = (SELECT codart FROM commander_articles WHERE codart = NEW.pro_id);
@@ -29,6 +33,8 @@ BEGIN
             ELSE
             UPDATE commander_articles SET qte = nouveau_stock WHERE codart = NEW.pro_id;
         END IF;
+    ELSE
+        DELETE FROM commander_articles WHERE codart = NEW.pro_id;
     END IF;
 END$$
 
@@ -36,5 +42,13 @@ DELIMITER ;
 
 
 UPDATE `products` 
+SET `pro_stock` = '6' 
+WHERE `products`.`pro_id` = 8
+
+UPDATE `products` 
 SET `pro_stock` = '4' 
+WHERE `products`.`pro_id` = 8
+
+UPDATE `products` 
+SET `pro_stock` = '3' 
 WHERE `products`.`pro_id` = 8

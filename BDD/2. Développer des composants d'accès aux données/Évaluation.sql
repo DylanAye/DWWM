@@ -1,9 +1,12 @@
+DROP VIEW IF EXISTS v_Catalogue;
 CREATE VIEW v_Catalogue
 AS
 SELECT pro_id, pro_ref, pro_name, pro_cat_id, cat_name
 FROM products
 JOIN categories ON products.pro_cat_id = categories.cat_id
 
+SELECT *
+FROM v_Catalogue
 
 
 DELIMITER $$
@@ -29,4 +32,4 @@ END$$
 
 DELIMITER ;
 
-CALL Facture(53)
+CALL Facture(53);

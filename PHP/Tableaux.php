@@ -14,35 +14,41 @@
         //     }
         // }
 
-        $nb = count($a['19001']);
-        $reverse = array_reverse($a['19001']);
+        // $nb = count($a['19001']);
+        // $reverse = array_reverse($a['19001']);
 
-        foreach ($reverse as $b => $c)
-        {
-            if ($c=="Stage")
-            {
-                $pos = $nb - $b;
-                echo 'La dernière semaine de stage aura lieu la ',$pos,'ème semaine.';
-            break;
-            }
-        }
+        // foreach ($reverse as $b => $c)
+        // {
+        //     if ($c=="Stage")
+        //     {
+        //         $pos = $nb - $b;
+        //         echo 'La dernière semaine de stage aura lieu la ',$pos,'ème semaine.';
+        //     break;
+        //     }
+        // }
+
+
+
+        // $codes = array_keys($a);
+
+        // var_dump($codes);
 
         
 
-        $i = 0;
+        // $i = 0;
         
-        foreach ($a['19003'] as $b => $c)
-        {
-            if ($c=="Stage")
-            {
-                while ($c=="Stage")
-                {
-                    $i++;
-                break;
-                }
-            }
-        }
-        echo 'Le stage du groupe 19003 durera ',$i,' semaines.';
+        // foreach ($a['19003'] as $b => $c)
+        // {
+        //     if ($c=="Stage")
+        //     {
+        //         while ($c=="Stage")
+        //         {
+        //             $i++;
+        //         break;
+        //         }
+        //     }
+        // }
+        // echo 'Le stage du groupe 19003 durera ',$i,' semaines.';
 
     ?>
 </html>

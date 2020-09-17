@@ -87,13 +87,40 @@ INSERT INTO `suppliers` (`sup_id`,`sup_name`,`sup_address`,`sup_zipcode`,`sup_ci
 (10,"Arcu Iaculis Enim Corp.","858-1453 Cum Ave","1283","Buggenhout","0624070976","Aliquam.erat.volutpat@eunulla.ca","CA");
 
 INSERT INTO `products` (`pro_id`,`pro_name`,`pro_desc`,`pro_price`,`pro_ref`,`pro_stock`,`pro_stock_alert`,`pro_color`,`pro_picture`,`pro_add_date`,`pro_update_date`,`pro_blocked`,`pro_sup_id`,`pro_cat_id`) VALUES 
-(1,"Guitare Électrique LA, Red + Pack Ampli","aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non",909,"TRH45TOZ9HF",3,8,"orange","vitae","2021-01-10","2021-01-07",2,6),
-(2,"Nulla","tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam",919,"SZT98BVB4TL",10,2,"red","vitae","2019-12-05","2021-02-13",1,10),
-(3,"Sed","Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus.",230,"FIT04OWL9SR",1,5,"green","elit,","2019-12-29","2020-10-07",2,2),
-(4,"ligula.","nisi. Cum sociis natoque penatibus et magnis dis parturient montes,",743,"EJJ89BUI1EN",4,5,"violet","dapibus","2021-02-20","2020-06-04",1,9),
-(5,"tellus","pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna.",566,"KWY33EKC6KN",7,3,"violet","faucibus","2019-09-19","2021-08-14",2,9),
-(6,"id,","mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet,",232,"EJD86CDN7UB",10,10,"indigo","metus","2021-05-05","2020-08-13",1,10),
-(7,"magna","at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare",737,"UDC34OGJ9FR",1,6,"blue","Curabitur","2021-07-16","2019-11-29",1,4),
-(8,"Aliquam","parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor.",745,"QVY72AVX6OG",7,7,"red","scelerisque","2019-11-06","2020-12-02",2,6),
-(9,"amet","lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor",781,"XTX77EUD2OP",8,9,"orange","Maecenas","2021-08-26","2019-12-18",2,6),
-(10,"ut,","ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate,",145,"CUX73ZDA3DG",8,7,"orange","sociis","2020-04-22","2020-02-02",1,4);
+(1,"Guitare Électrique LA, Red + Pack Ampli","Le plus beau des cadeaux pour des premier pas dans la musique. La guitare électrique 3/4 LA est linstrument parfait pour débuter dans le monde du Rock n Roll. 
+Ses micros à simple bobinage vous permettent de remplir lair de sonorités délicates et nettes ou de sons puissants pleins de distorsion. Un pack offrant un excellent rapport qualité/prix avec un ampli de guitare 
+électrique 10 W un câble une sangle et un accordeur électronique. Profitez des mêmes caractéristiques que notre guitare électrique LA la plus vendue - mais dans une taille plus petite. Tout ce dont un guitariste 
+en herbe a besoin.",143.5,"TRH45TOZ9HF",3,8,"orange","https://images-na.ssl-images-amazon.com/images/I/415Wh2sKFiL._AC_.jpg","2021-01-10","2021-01-07",2,6,4),
+(2,"Martin Smith Kit de Guitare Acoustique avec Médiators de Guitare de Guitare Sangle de Guitare Naturel","La guitare acoustique Martin Smith W100 est le choix préféré pour des milliers de guitaristes 
+pour les ges 11+ Conçu spécialement pour les étudiants cette pleine grandeur guitare acoustique est livré avec des cordes en acier sangle de guitare cordes de guitare de rechange et médiators de guitare 
+Ce W-100 guitare acoustique a une taille complète 39'' corps parfaitement profilée pour une position de lecture confortable et avait une cheville en bas singulier pour attacher 
+votre sangle de guitare",55.56,"SZT98BVB4TL",10,2,"red","https://images-na.ssl-images-amazon.com/images/I/710GoiVmkFL._AC_SL1500_.jpg","2019-12-05","2021-02-13",1,10,4),
+(3,"BDK-1 Kit de Batterie pour Debutant de Taille Standard par Gear4music Noir","Faites votre entrée dans le monde de la batterie. Idéale pour le jeu à domicile, cette batterie vous permet de jouer dans tous 
+les styles : rock, pop et bien plus encore. La batterie pour débutant BDK-2 comprend tout ce dont vous aurez besoin pour devenir un meilleur batteur. ",261,"FIT04OWL9SR",1,5,"green",
+"https://images-na.ssl-images-amazon.com/images/I/41pGSD-XEHL._AC_.jpg,","2019-12-29","2020-10-07",2,2,13),
+(4,"Eastar Flute Traversiere EFL-1 Nickel Plaqué 16 Trous DO.","Eastar propose un pack à prix intéressant pour toutes les personnes qui souhaitent apprendre la flûte traversière. Il comprend tout le nécessaire 
+pour démarrer sur de bonnes bases dont une flûte traversière EFL-1, un étui, un socle, un tournevis ainsi que des accessoires nécessaires à son entretien, tels qu'un gant à polir, un tige de nettoyage et un 
+chiffon de nettoyage. ",79.99,"EJJ89BUI1EN",4,5,"violet","dapibus","2021-02-20","2020-06-04",1,9,11),
+(5,"East Top 10 Hole 20 Tones Professional Diatonic Harmonica C Key with Blue Case, Standard Harmonicas Pour joueurs professionnels, débutants, étudiants, adultes, enfants, enfants, comme meilleur cadeau ",
+"L'harmonica diatonique à 10 trous est au format de poche avec des extrémités entièrement fermées. Le format de poche est facile à transporter et facile à apprendre. Vous pouvez jouer une variété de morceaux 
+de musique: blues, folk, rock, country, jazz. Convient aux activités de plein air telles que la fête, la performance et les voyages. ",24.99,"KWY33EKC6KN",7,3,"violet",
+"https://images-na.ssl-images-amazon.com/images/I/71yg6Wp5jjL._AC_SL1500_.jpg","2019-09-19","2021-08-14",2,9,12),
+(6,"Harpe irlandaise 12 cordes en bois de Sheesham / Harpe celtique en bois de rose avec étui de transport ","Harpe irlandaise 12 cordes en bois de Sheesham/rose. Étui de transport inclus. Harpe celtique 
+irlandaise 12 cordes en bois de rose/Sheesham Cette harpe est fabriquée en bois de rose massif/bois de Sheesham, avec un bois de bouleau contreplaqué et de la frêne au dos. 12 cordes en nylon mono tech 100 % 
+jouables ",146.23,"EJD86CDN7UB",10,10,"indigo","https://images-na.ssl-images-amazon.com/images/I/61y0LwjYeTL._AC_SL1000_.jpg","2021-05-05","2020-08-13",1,10,7),
+(7,"Yinfente Violoncelle électrique acoustique 4/4 en bois d'épicéa massif Raccords en ébène son doux avec sac de violoncelle marron ","Violoncelle de la marque Yinfente. Entièrement fabriqué à la main. 
+violoncelle électrique acoustique Bois d'érable et d'épicéa. Avec raccords en ébène. Son doux et charmant. Notre qualité de violoncelle est très bien. Vendre à beaucoup de pays, Tant de clients aiment 
+beaucoup ",311.47,"UDC34OGJ9FR",1,6,"blue","https://images-na.ssl-images-amazon.com/images/I/71m0HZ8Y%2BUL._AC_SL1200_.jpg","2021-07-16","2019-11-29",1,4,6),
+(8,"A-Star REC01BE Flûte à bec soprano/Enregistreur Descant pour Enfant Blanc","La flûte à bec soprano A-Star est l'instrument idéal pour les jeunes qui débutent dans l'apprentissage de la musique. 
+Cet instrument au son exceptionnel est accompagné d'une housse de protection et bénéficie d'un rapport qualité/prix très avantageux. Extrêmement populaire et hautement recommandée, la flûte à bec soprano A-Star 
+est fabriquée en plastique très résistant couleur crème et munie d'un système de doigté baroque. ",6,"QVY72AVX6OG",7,7,"red","https://images-na.ssl-images-amazon.com/images/I/71dd%2B7z0p9L._AC_SL1500_.jpg",
+"2019-11-06","2020-12-02",2,6,11),
+(9,"Vangoa Clavier électronique 88 touches avec support de clavier de piano","Le piano à clavier pleine taille à 88 touches sensibles à la vélocité vous permet de jouer de nombreux niveaux de volume différents, de 
+doux à fort. Équipé d'un double haut-parleur stéréo, vous plongez dans le merveilleux monde de la musique, adapté aux artistes de différents niveaux, en particulier pour les débutants, les intermédiaires, les 
+mélomanes et plus encore. ",781,"XTX77EUD2OP",8,9,"orange","Maecenas","2021-08-26","2019-12-18",2,6,8),
+(10,"Eastar Violon 3/4 avec Etui, Accordeur, Epaulière, Archet et Colophane ","Sa table est en épicéa, son dos et ses éclisses sont en érable. Sa touche, sa mentonnière et ses chevilles sont quant à eux en ébène. 
+Pour un accordage simplifié et fiable, des tendeurs de précision sont présents sur le cordier. Le violon est totalement fabriqué à la main. Ce très bel instrument possède une belle finition antique avec un vernis 
+appliqué semi-manuellement et de jolis filets incrustés. Ce violon est basé sur une conception sérieuse et robuste.",83.99,"CUX73ZDA3DG",8,7,"orange",
+"https://images-na.ssl-images-amazon.com/images/I/81aOvN23dWL._AC_SL1500_.jpg","2020-04-22","2020-02-02",1,4,5);
+
+
