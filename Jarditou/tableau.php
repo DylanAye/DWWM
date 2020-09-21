@@ -10,41 +10,9 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
-        <header>
-            <div class="container-fluid">
-                <div class="row">                  
-                    <div class="col-9 d-none d-md-block"><img src="img/jarditou_logo.jpg" alt="Logo" width="200"></div>
-                    <div class="col-3 h2 d-none d-md-block"><p>Tout le jardin</div>
-                </div>
-            </div>
-            <nav class="navbar navbar-expand-md bg-light navbar-light">
-                <span class="navbar-brand mb-0 h1">Jarditou.com</span>
-                <!-- Toggler/collapsibe Button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <a class="navbar-toggler-icon"></a>
-                </button>   
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tableau.html">Tableau</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Formulaire</a>
-                        </li>
-                        </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-                    </form>         
-                </div>
-            </nav>
-            <div style="text-align:center">
-                <img class="img-fluid w-100" src="img/promotion.jpg" alt="Promotion">
-            </div>
-        </header>
+        <?php
+            include("header.php");
+        ?>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
                 <thead>
@@ -101,24 +69,9 @@
                 </tbody>
             </table>
         </div>
-        <footer>
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <!-- Toggler/collapsibe Button -->
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Mentions légales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Horaires</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Plan du site</a>
-                        </li>
-                        </ul>    
-                </div>
-            </nav>
-        </footer>
+        <?php
+            include("footer.php");
+        ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
