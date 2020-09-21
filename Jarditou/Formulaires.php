@@ -189,7 +189,7 @@
         if ($verif==0)
         {
             //echo "Tout est ok !!!";
-            header("Location:tableau.php?");
+            header("Location:tableau.html?");
         }
         else
         {

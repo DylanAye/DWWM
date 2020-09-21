@@ -5,6 +5,8 @@
         "19003" => array("", "", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "", "", "Validation") 
        );
         
+
+///////////////////// 1 /////////////////////
         
         // foreach ($a['19002'] as $b => $c)
         // {
@@ -13,6 +15,9 @@
         //         echo 'La semaine de validation aura lieu la ',$b+1,'ème semaine.';
         //     }
         // }
+
+
+///////////////////// 2 /////////////////////
 
         // $nb = count($a['19001']);
         // $reverse = array_reverse($a['19001']);
@@ -28,12 +33,15 @@
         // }
 
 
+///////////////////// 3 /////////////////////
 
-        // $codes = array_keys($a);
+        // $aCodes = array_keys($a);
 
-        // var_dump($codes);
+        // var_dump($aCodes);
 
-        
+
+
+///////////////////// 4 /////////////////////
 
         // $i = 0;
         
