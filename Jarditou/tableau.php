@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-            include("header.php");
+            include("functions/header.php");
         ?>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
@@ -70,7 +70,7 @@
             </table>
         </div>
         <?php
-            include("footer.php");
+            include("functions/footer.php");
         ?>
 
         <!-- Optional JavaScript -->

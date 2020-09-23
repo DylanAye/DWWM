@@ -15,7 +15,7 @@
     <body>
     <!-- Appel du header -->
         <?php
-            include("header.php");
+            include("functions/header.php");
         ?>
         <div class="container-fluid">
             <div class="row">
@@ -51,7 +51,7 @@
         <br>		
         <!-- Appel du footer -->
         <?php
-            include("footer.php");
+            include("functions/footer.php");
         ?>
 
         <!-- Optional JavaScript -->

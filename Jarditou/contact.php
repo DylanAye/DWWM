@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<?php
-            include("header.php");
+            include("functions/header.php");
         ?>
 		<br>
 		<p class='ml-3'>* Ces zones sont obligatoires</p>
@@ -101,7 +101,7 @@
 		</form>
 		
 		<?php
-            include("footer.php");
+            include("functions/footer.php");
         ?>
 
 		<!-- Optional JavaScript -->
