@@ -108,7 +108,7 @@ WHERE pro_id IN
 SELECT TRUNCATE (SUM((ode_unit_price * ode_quantity)*((100 - ode_discount)/ 100)),2) AS CA
 FROM orders_details
 JOIN orders ON orders_details.ode_ord_id = orders.ord_id
-WHERE ord_order_date BETWEEN '2020-01-01' AND '2020-12-31'
+WHERE YEAR(ord_order_date) = 2020;
 
 -------------------- 19 --------------------
 
