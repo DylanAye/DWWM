@@ -15,6 +15,12 @@
     $modif = (empty($_POST['pro_d_modif']) ? NULL : $_POST['pro_d_modif']);  //Permet de mettre NULL dans la base si le champ est vide
     $bloque = (empty($_POST['pro_bloque']) ? NULL : $_POST['pro_bloque']);
 
+    $destination = "/img";
+    $fichier = $destination.basename($_FILES['fichier']);
+    var_dump($_FILES['fichier']);
+    var_dump ($fichier);
+    $extension = pathinfo($_POST["fichier"]["tmp_name"], PATHINFO_EXTENSION); 
+
     if(isset($_POST['pro_id']) AND isset($_POST['pro_cat_id']) AND isset($_POST['pro_ref']) AND isset($_POST['pro_libelle']) AND isset($_POST['pro_description']) AND isset($_POST['pro_prix']) AND isset($_POST['pro_stock']) AND isset($_POST['pro_couleur']) AND isset($_POST['pro_photo']) AND isset($_POST['pro_d_ajout']))
     //Permet de vérifier que tous les champs sont bien remplis
     {
@@ -36,68 +42,31 @@
         //header("Location:liste.php");   //Permet d'afficher la liste des produits de la table
     }
 
-    $destination = "img/";
-    $fichier = $destination.basename($_FILES['fichier']['name']);
-    $uploadOk = 1;
-    var_dump ($fichier);
-    $extension = pathinfo($fichier, PATHINFO_EXTENSION);
-    $nouveauNom = 'NouvelleImage.png';
 
-    //Permet de vérifier si le fichier est vraiment une image
-    if(isset($_POST['submit']))
-    {
-        $check = getimagesize($_FILES['fichier']['tmp_name']);
-        if($check !== false)
-        {
-            echo 'Le fichier est une image -' . $check['mime'] . '.';
-            $uploadOk = 1;
-        }
-        else
-        {
-            echo 'Le fichier n\'est pas une image';
-            $uploadOk = 0;
-        }
-    }
+    // On met les types autorisés dans un tableau (ici pour une image)
+    $aMimeTypes = array("image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/x-png", "image/tiff");
 
-    //Permet de vérifier si l'image upload existe déjà ou pas
-    if (file_exists($fichier))
-    {
-        echo 'Le fichier existe déjà';
-        $uploadOk = 0;
-    }
+    // On extrait le type du fichier via l'extension FILE_INFO 
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $mimetype = finfo_file($finfo, $_FILES["fichier"]["tmp_name"]);
+    finfo_close($finfo);
 
-    //Vérifie la taille de l'image
-    if($_FILES['fichier']['size'] > 500000)
-    {
-        'La taille du fichier est trop élevée';
-        $uploadOk = 0;
+    // Si c'est un tableau et que celui-ci n'est pas vide  
+    if (is_array($_FILES["fichier"]["error"]) && !empty($_FILES["fichier"]["error"]) ) 
+    { 
+        exit;       
     }
-
-    //N'autorise que certains formats
-    if($extension != "jpg" && $extension != "png" && $extension != "jpeg" && $extension != "gif" )
+    
+    if (in_array($mimetype, $aMimeTypes))
     {
-        echo 'Seuls les formats jpg, jpeg, png et gif sont autorisés.';
-        $uploadOk = 0;
-    }
-
-
-    //Vérifie si $uploadOk est égal à 0 ou non
-    if($uploadOk == 0)
+        move_uploaded_file($_FILES["fichier"]["tmp_name"], "photo.jpg");
+        //Le type est parmi ceux autorisés, donc OK, on va pouvoir déplacer et renommer le fichier
+    } 
+    else 
     {
-        echo 'Désolés, votre fichier n\'a pas pu être envoyé';
-    }
-    else
-    {
-        if(move_uploaded_file($_FILES["fichier"]["tmp_name"],$fichier . $nouveauNom))
-        {
-            
-            echo 'Le fichier'. htmlspecialchars(basename($_FILES['fichier']['name'])). ' a été envoyé.';
-            var_dump($_FILES["fichier"]["name"]);
-        }
-        else
-        {
-            echo 'Il y a eu une erreur lors de l\'envoi';
-        }
-    }
+        // Le type n'est pas autorisé, donc ERREUR
+        echo "Type de fichier non autorisé";    
+        exit;
+    }    
     
 ?>

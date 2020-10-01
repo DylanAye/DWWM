@@ -5,7 +5,7 @@
     </head>
     <body>
       
-        <form method='POST' action='produits_ajout_script.php' >
+        <form method='POST' action='produits_ajout_script.php' enctype="multipart/form-data">
             <input type='text' id='id' name='pro_id' placeholder='ID'><br> <!-- Tester avec id-->
             <input type='text' name='pro_cat_id' placeholder='ID Cat'><br>
             <input type='text' name='pro_ref' placeholder='Référence'><br>
@@ -18,6 +18,7 @@
             <input type='text' name='pro_d_ajout' placeholder='Date ajout'><br>
             <input type='text' name='pro_d_modif' placeholder='Modif'><br>
             <input type='text' name='pro_bloque' placeholder='Bloqué'><br>
+            <input type="file" name="fichier"><br>
 
             <input type='submit' value='Valider'>
         </form>
