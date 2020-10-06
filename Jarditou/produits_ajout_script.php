@@ -33,15 +33,14 @@
         $requete->bindValue(':bloque',$bloque);
         $requete->execute();
 
-        //header("Location:liste.php");   //Permet d'afficher la liste des produits de la table
+        header("Location:liste.php");   //Permet d'afficher la liste des produits de la table
     }
 
     $destination = "img/";
     $fichier = $destination.basename($_FILES['fichier']['name']);
     $uploadOk = 1;
-    var_dump ($fichier);
     $extension = pathinfo($fichier, PATHINFO_EXTENSION);
-    $nouveauNom = 'NouvelleImage.png';
+    $nouveauNom = "NouvelleImage.png";
 
     //Permet de vérifier si le fichier est vraiment une image
     if(isset($_POST['submit']))
@@ -69,7 +68,7 @@
     //Vérifie la taille de l'image
     if($_FILES['fichier']['size'] > 500000)
     {
-        'La taille du fichier est trop élevée';
+        echo 'La taille du fichier est trop élevée';
         $uploadOk = 0;
     }
 
@@ -86,18 +85,20 @@
     {
         echo 'Désolés, votre fichier n\'a pas pu être envoyé';
     }
-    else
+    else    //Si tout est ok, on peut upload l'image
     {
-        if(move_uploaded_file($_FILES["fichier"]["tmp_name"],$fichier . $nouveauNom))
-        {
+        move_uploaded_file($_FILES["fichier"]["tmp_name"],$destination.$id.'.'.$extension);     //Permet d'envoyer le fichier dans la destination souhaitée et de le renommer en fonction de l'id du produit
+
+        // if(move_uploaded_file($_FILES["fichier"]["tmp_name"],$fichier))
+        // {
             
-            echo 'Le fichier'. htmlspecialchars(basename($_FILES['fichier']['name'])). ' a été envoyé.';
-            var_dump($_FILES["fichier"]["name"]);
-        }
-        else
-        {
-            echo 'Il y a eu une erreur lors de l\'envoi';
-        }
+        //     echo 'Le fichier'. htmlspecialchars(basename($_FILES['fichier']['name'])). ' a été envoyé.';
+        //     //var_dump($_FILES["fichier"]["name"]);
+        // }
+        // else
+        // {
+        //     echo 'Il y a eu une erreur lors de l\'envoi';
+        // }
     }
     
 ?>
