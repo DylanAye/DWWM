@@ -179,10 +179,7 @@
             //$demandErr = "Box is required <br>";
             $verif++;
             //echo $demandErr;
-        } else 
-        {
-
-        }
+        } else
         
         
         //Si la variable de vérification est toujours à 0, on valide le formulaire
