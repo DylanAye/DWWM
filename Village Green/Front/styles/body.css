@@ -1,0 +1,6 @@
+#background-noir
+{
+    background : url("../img/background_village.png");
+    position : sticky;
+    background-size : cover;
+}

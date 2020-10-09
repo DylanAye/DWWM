@@ -1,0 +1,73 @@
+div
+{
+    z-index: 3;
+}
+
+#multicouche img 
+{
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+#bandes
+{
+    margin-top:0.9em;
+    margin-left: 20px;
+    z-index: 1;
+}
+
+#logo
+{
+    margin-top:1em;
+    margin-left:20px;
+    z-index: 2;
+}
+
+#ligne1
+{
+    padding-top: 1.9em;
+    margin-bottom: 1.1em;
+}
+
+#ligne2
+{
+    color:white;
+    margin-bottom: 0.8em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#ligne3
+{
+    color:white;
+    column-width: 3em;
+    font-size: 1em;
+}
+
+.container
+{
+    max-width: 1170px !important;  
+    font-family: arial;
+    /* background : url("../img/bande_milieu.png"); */
+}
+
+.dropbtn
+{
+    background: none;
+    color: white;
+    border: none;
+}
+
+.dropdown-content
+{
+    image : url "img/MODAL_guitare_encadrer.png";
+    z-index: 2;
+}
+
+.dropdown-content a
+{
+    https://www.w3schools.com/howto/howto_css_dropdown.asp
+}
+
+.dropdown:hover .dropdown-content {display: block;}
