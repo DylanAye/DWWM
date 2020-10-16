@@ -21,8 +21,9 @@
             $aView["liste_produits"] = $aListe;
 
             // Appel de la vue avec transmission du tableau  
+            $this->load->view('header');
             $this->load->view('liste', $aView);
+            $this->load->view('footer');
         }
     }
-
 ?>

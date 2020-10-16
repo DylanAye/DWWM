@@ -56,7 +56,9 @@
             } 
             else 
             { // 1er appel de la page: affichage du formulaire
+                $this->load->view('header');
                 $this->load->view('ajouter');
+                $this->load->view('footer');
             }
         } // -- ajouter()
 
@@ -102,8 +104,10 @@
                 }
             } 
             else 
-            { // 1er appel de la page: affichage du formulaire             
+            { // 1er appel de la page: affichage du formulaire
+                $this->load->view('header');
                 $this->load->view('modifier', $aView);
+                $this->load->view('footer');
             }
         } // -- modifier()
     }

@@ -7,11 +7,21 @@
         <title>Liste des produits</title>
     </head>
     <body>
-        <h1>Liste des produits</h1>
-        <div class="align-middle col-7">
+        <div class="container">
+            <br>
+            
+            <a type="button" class="btn btn-secondary btn-lg btn-block" href="<?php echo site_url('form/ajouter') ?>">
+                Ajouter un produit
+            </a>
+            <br>
             <table class='table-striped table-bordered'>
+                <thead>
+                    <td> ID </td>
+                    <td> Référence </td>
+                    <td> Libellé </td>
+                    <td> Description</td>
+                </thead>            
                 <?php
-                    echo "<thead>";
                     foreach ($liste_produits as $row) 
                     {
                         echo"<tbody> <tr class='table'> <td>".$row->pro_id."</td>";
