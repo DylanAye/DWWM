@@ -73,11 +73,10 @@
                     <?php echo form_error('pro_bloque'); ?>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="pro_ref">Photo</label>
                     <input type="file" name="fichier">
-                </div>
-
+                </div> -->
                 <button type="submit" class="btn btn-dark">Ajouter</button>
             </form>
         </div>

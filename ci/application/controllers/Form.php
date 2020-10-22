@@ -41,7 +41,6 @@
                 $this->form_validation->set_rules("pro_libelle", "Libellé", "required", array("required" =>"Le %s est nécessaire"));
                 $this->form_validation->set_rules("pro_prix", "Prix", "required", array("required" =>"Le %s est nécessaire"));
                 $this->form_validation->set_rules("pro_stock", "Stock", "required", array("required" =>"Le %s est nécessaire"));
-                // $this->form_validation->set_rules("pro_d_ajout", "Date d'ajout", array("required" =>"required", "La %s est nécessaire"));
 
                 if ($this->form_validation->run() == FALSE)
                 { // Echec de la validation, on réaffiche la vue formulaire 
@@ -87,15 +86,15 @@
                 $this->form_validation->set_rules('pro_ref', 'Référence', 'required');
 
                 if ($this->form_validation->run() == FALSE)
-                { // Echec de la validation, on réaffiche la vue formulaire 
+                { // Echec de la validation, on réaffiche la vue formulaire
                     $this->load->view('modifier', $aView);
                 }
                 else
-                { // La validation a réussi, nos valeurs sont bonnes, on peut modifier en base  
+                { // La validation a réussi, nos valeurs sont bonnes, on peut modifier en base
 
-                    /* Utilisation de la méthode where() toujours 
+                    /* Utilisation de la méthode where() toujours
                     * avant select(), insert() ou update()
-                    * dans cette configuration sur plusieurs lignes 
+                    * dans cette configuration sur plusieurs lignes
                     */  
                     $this->db->where('pro_id', $id);
                     $this->db->update('produits', $data);
@@ -110,5 +109,19 @@
                 $this->load->view('footer');
             }
         } // -- modifier()
+
+        public function supprimer($id)
+        {
+            // Chargement des assistants 'form' et 'url'
+            $this->load->helper('url');
+
+            // Chargement de la librairie 'database'
+            $this->load->database();
+            
+            //Requête de suppression
+            $produit = $this->db->query("DELETE FROM produits WHERE pro_id= $id");
+            
+            redirect('produits/liste');
+        }
     }
 ?>

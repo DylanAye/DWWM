@@ -1,0 +1,14 @@
+#background-noir
+{
+    background : url("../img/background_village.png");
+    position : sticky;
+    background-size : cover;
+    background-attachment: fixed;
+}
+
+.img_body-top
+{
+    z-index: 1;
+    align-content : center;
+    position:absolute;
+}
