@@ -1,4 +1,11 @@
+<!DOCTYPE html>
 <html>  
+     <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Liste des produits</title>
+    </head>
     <div class="container">
         <div class="row">                  
             <div class="col-9 d-none d-md-block"><img src="<?php echo base_url('assets/images/jarditou_logo.jpg') ?>" alt="Logo" width="200"></div>
@@ -16,18 +23,18 @@
                         <a class="nav-link" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tableau.php">Tableau</a>
+                        <a class="nav-link" href="<?php echo site_url('produits/liste') ?>">Nos produits</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Formulaire</a>
                     </li>
                     </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search">
-                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Rechercher</button>
+                    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search"> -->
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Se connecter</button>
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Inscription</button>
                 </form>         
             </div>
         </nav>
         <img class="img-fluid w-100" src="<?php echo base_url('assets/images/promotion.jpg') ?>" alt="Promotion">
     </div>
-</html>

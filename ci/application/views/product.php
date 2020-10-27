@@ -12,11 +12,12 @@
             Libellé : <?php echo $liste_produits->pro_libelle ?><br>
             Référence : <?php echo $liste_produits->pro_ref ?><br><br>
 
-            <a type="button" class="btn btn-danger btn-lg" href="<?php echo site_url('form/supprimer') ?>">
+            <a type="button" class="btn btn-danger" href="<?php echo site_url('form/supprimer/'.$liste_produits->pro_id) ?>">
                 Supprimer
             </a>
-
-
+            <a type='button' class='btn btn-secondary' href="<?php echo site_url('form/modifier/'.$liste_produits->pro_id) ?>">
+                Modifier
+            </a>
         </div>
     </body>
 </html>

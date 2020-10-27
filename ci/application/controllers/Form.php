@@ -112,14 +112,12 @@
 
         public function supprimer($id)
         {
-            // Chargement des assistants 'form' et 'url'
-            $this->load->helper('url');
+            $this->load->model("m_Form");
+            $this->FormModel->delete_row($id);
 
-            // Chargement de la librairie 'database'
-            $this->load->database();
             
             //Requête de suppression
-            $produit = $this->db->query("DELETE FROM produits WHERE pro_id= $id");
+            // $this->db->query("DELETE FROM produits WHERE pro_id= $id");
             
             redirect('produits/liste');
         }

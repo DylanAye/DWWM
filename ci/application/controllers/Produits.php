@@ -8,11 +8,14 @@
 
         public function liste()
         {
+            //Charge le modèle
+            // $this->load->model('m_Produits');
+            
             // Charge la librairie 'database'
             $this->load->database();
 
             // Exécute la requête 
-            $results = $this->db->query("SELECT * FROM produits");  
+            $results = $this->db->query("SELECT * FROM produits");
 
             // Récupération des résultats    
             $aListe = $results->result();   

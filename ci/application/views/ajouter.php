@@ -62,10 +62,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="pro_ref">Extension photo</label>
+                    <input type="text" name="pro_couleur" id="pro_photo" class="form-control" value="<?php echo set_value('pro_photo'); ?>">
+                    <?php echo form_error('pro_photo'); ?>
+                </div>
+
+                <!-- <div class="form-group">
                     <label for="pro_ref">Date ajout</label>
                     <input type="text" name="pro_d_ajout" id="pro_d_ajout" class="form-control" value="<?php echo set_value('pro_d_ajout'); ?>">
                     <?php echo form_error('pro_d_ajout'); ?>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="pro_ref">Bloqué ?</label>

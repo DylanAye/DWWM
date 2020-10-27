@@ -1,4 +1,4 @@
-<html>
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <!-- Toggler/collapsibe Button -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
