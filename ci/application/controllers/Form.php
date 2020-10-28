@@ -16,7 +16,7 @@
             // Chargement de la librairie form_validation
             $this->load->library('form_validation'); 
 
-            if ($this->input->post()) 
+            if ($this->input->post())
             { // 2ème appel de la page: traitement du formulaire
                 
                 $data = $this->input->post();
@@ -28,7 +28,7 @@
                 // Ajout d'une date d'ajout que le formulaire ne contient pas
                 $data["pro_d_ajout"] = date("Y-m-d h:i:s");
 
-                // Transformation d'une information venant du formalaire
+                // Transformation d'une information venant du formulaire
                 // par exemple forcer la référence d'un produit en majuscules
                 $pro_ref = $this->input->post("pro_ref");
                 $data["pro_ref"] = strtoupper($pro_ref);

@@ -15,18 +15,18 @@
                     <td> Description</td>
                 </thead>
                 <tbody>
-                <?php
-                    foreach ($liste_produits as $row)
-                    {?>
-                        <tr class='table'>
-                            <td><img src='<?php echo base_url('assets/images/'.$row->pro_id.".".$row->pro_photo);?> ' width='100'></td>
-                            <td><a href="<?php echo site_url('produits/product/'.$row->pro_id) ?>"><?php echo $row->pro_id; ?>
-                            <td><?php echo $row->pro_ref;?></td>
-                            <td><?php echo $row->pro_libelle; ?></td>
-                            <td><?php echo $row->pro_description; ?></td>
-                        </tr>
-                    <?php } 
-                ?>
+                    <?php
+                        foreach ($liste_produits as $row)
+                        {?>
+                            <tr class='table'>
+                                <td><img src='<?php echo base_url('assets/images/'.$row->pro_id.".".$row->pro_photo);?> ' width='100'></td>
+                                <td><a href="<?php echo site_url('produits/product/'.$row->pro_id) ?>"><?php echo $row->pro_id; ?>
+                                <td><?php echo $row->pro_ref;?></td>
+                                <td><?php echo $row->pro_libelle; ?></td>
+                                <td><?php echo $row->pro_description; ?></td>
+                            </tr>
+                        <?php } 
+                    ?>
                 </tbody>
             </table>
         </div>
