@@ -44,7 +44,9 @@
 
                 if ($this->form_validation->run() == FALSE)
                 { // Echec de la validation, on réaffiche la vue formulaire 
+                    $this->load->view('header');
                     $this->load->view('ajouter');
+                    $this->load->view('footer');
                 }
                 else
                 { // La validation a réussi, nos valeurs sont bonnes, on peut insérer en base

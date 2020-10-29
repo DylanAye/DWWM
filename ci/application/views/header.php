@@ -32,7 +32,7 @@
                 <form class="form-inline my-2 my-lg-0">
                     <!-- <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search"> -->
                     <a class="btn btn-outline-danger  my-sm-0" type="button" href="<?php echo site_url('sessions/connexion') ?>">Se connecter</a>
-                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Inscription</button>
+                    <a class="btn btn-outline-danger  my-sm-0" type="button" href="<?php echo site_url('sessions/inscription') ?>">Inscription</a>
                 </form>         
             </div>
         </nav>

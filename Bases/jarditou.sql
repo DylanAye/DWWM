@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 28 oct. 2020 à 15:42
+-- Généré le : jeu. 29 oct. 2020 à 15:43
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -146,6 +146,36 @@ INSERT INTO `produits` (`pro_id`, `pro_cat_id`, `pro_ref`, `pro_libelle`, `pro_d
 (51, 9, 'AT24', 'Yes', 'Yesss', '1.00', 15, 'Bleu', 'jpg', '2020-01-01', NULL, NULL),
 (52, 9, 'SAT21', 'Brouette', 'Guitare accoustique', '25.00', 15, 'Bleu', 'png', '2020-10-13', NULL, NULL),
 (53, 9, 'REF345', 'Pelle', 'Grande pelle', '1.00', 15, 'Vert', 'jpg', '2020-10-27', NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `use_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `use_lastname` varchar(50) NOT NULL,
+  `use_firstname` varchar(50) NOT NULL,
+  `use_address` varchar(150) NOT NULL,
+  `use_zipcode` varchar(5) NOT NULL,
+  `use_city` varchar(50) NOT NULL,
+  `use_countries_id` char(2) NOT NULL,
+  `use_mail` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `use_phone` varchar(10) NOT NULL,
+  `use_password` varchar(60) NOT NULL,
+  `use_add_date` datetime NOT NULL,
+  `use_update_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`use_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`use_id`, `use_lastname`, `use_firstname`, `use_address`, `use_zipcode`, `use_city`, `use_countries_id`, `use_mail`, `use_phone`, `use_password`, `use_add_date`, `use_update_date`) VALUES
+(101, 'dqsd', 'fgdsqf', 'dqsd', 'dsqd', 'dqsd', '', 'dsqf', 'gfsg', 'salut', '2020-10-29 02:20:37', NULL);
 
 --
 -- Contraintes pour les tables déchargées
